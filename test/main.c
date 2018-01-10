@@ -26,8 +26,10 @@ void testLogger()
 }
 
 int testList(void);
+int testHashmap();
 int main()
 {
     testLogger();
     testList();
+    testHashmap();
 }

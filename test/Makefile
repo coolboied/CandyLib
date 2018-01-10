@@ -3,6 +3,7 @@ SRC =
 
 CSRC = $(BASE_DIR)/main.c \
 	   $(BASE_DIR)/test_list.c \
+	   $(BASE_DIR)/test_hashmap.c \
 
 INC = -I $(BASE_DIR) 	  			\
 	  -I $(BASE_DIR)/../			\
@@ -11,7 +12,9 @@ INC = -I $(BASE_DIR) 	  			\
 	  -I $(BASE_DIR)/../hashmap/ \
 
 LIB = ../logger/candyLogger.a \
-	  ../list/list.a
+	  ../list/list.a \
+	  ../hashmap/hashmap.a \
+
 
 CC = gcc
 AR = ar
@@ -27,7 +30,7 @@ OBJ = $(SRC:%.cpp=$(OBJDIR)%.o)
 COBJ = $(CSRC:%.c=$(OBJDIR)%.co) 
 ELIB = $(LIB:%=-l:%)
 
-all:$(OBJ) $(COBJ) $(LIB)
+$(TAR):$(OBJ) $(COBJ) $(LIB)
 	$(CC) $(LSEL) $(COBJ) $(OBJ) $(ELIB)
 
 $(OBJ): $(OBJDIR)%.o:%.cpp
@@ -44,5 +47,5 @@ $(LIB): %.a:
 clean:
 	rm $(OBJ) $(COBJ) $(TAR)
 
-cleanAll:
+cleanAll: $(CLIB)
 	rm $(OBJ) $(COBJ) $(TAR) $(LIB)

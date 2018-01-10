@@ -1,27 +1,23 @@
 BASE_DIR = .
 SRC = 
 
-CSRC = $(BASE_DIR)/loggerController.c \
-	   $(BASE_DIR)/loggerHandle.c	  \
-	   $(BASE_DIR)/loggerMode.c       \
+CSRC = $(BASE_DIR)/hashmap.c \
 
 
 INC = -I $(BASE_DIR) 	  \
-	  -I $(BASE_DIR)/../		\
-	  -I $(BASE_DIR)/inf/ \
 
 CC = gcc
 AR = ar
 DEBUG = -g
 
 ifdef SHARED
-TAR = candyLogger.so
+TAR = hashmap.so
 CSEL = -fpic -DLIB
 LSEL = -shared -o $(TAR)
 OBJDIR = build/sobj/
 LINKER = $(CC)
 else
-TAR = candyLogger.a
+TAR = hashmap.a
 CSEL = 
 LSEL = 
 OBJDIR = build/obj/
