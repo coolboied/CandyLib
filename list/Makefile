@@ -7,15 +7,13 @@ CSRC = $(BASE_DIR)/list.c \
 
 
 INC = -I $(BASE_DIR) 	  \
-	  -I $(BASE_DIR)/../		\
-	  -I $(BASE_DIR)/inf/ \
 
 CC = gcc
 AR = ar
 DEBUG = -g
 
 ifdef SHARED
-TAR = candyLogger.so
+TAR = list.so
 CSEL = -fpic -DLIB
 LSEL = -shared -o $(TAR)
 OBJDIR = build/sobj/

@@ -31,7 +31,7 @@ endif
 OBJ = $(SRC:%.cpp=$(OBJDIR)%.o) 
 COBJ = $(CSRC:%.c=$(OBJDIR)%.co) 
 
-all:$(OBJ) $(COBJ)
+$(TAR):$(OBJ) $(COBJ)
 	$(LINKER) $(LSEL) $(COBJ) $(OBJ)
 
 $(OBJ): $(OBJDIR)%.o:%.cpp
