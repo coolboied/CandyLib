@@ -25,11 +25,7 @@ void testLogger()
     cd_logger_print(loggerHd2, 201, "test mname | level %d\r\n", 1);
 }
 
-int testList(void);
-int testHashmap();
 int main()
 {
     testLogger();
-    testList();
-    testHashmap();
 }

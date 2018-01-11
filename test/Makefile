@@ -2,8 +2,6 @@ BASE_DIR = .
 SRC = 
 
 CSRC = $(BASE_DIR)/main.c \
-	   $(BASE_DIR)/test_list.c \
-	   $(BASE_DIR)/test_hashmap.c \
 
 INC = -I $(BASE_DIR) 	  			\
 	  -I $(BASE_DIR)/../			\

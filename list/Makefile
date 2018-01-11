@@ -3,10 +3,10 @@ SRC =
 
 CSRC = $(BASE_DIR)/list.c \
 	   $(BASE_DIR)/list_iterator.c	  \
-	   $(BASE_DIR)/list_node.c       \
 
 
 INC = -I $(BASE_DIR) 	  \
+	  -I $(BASE_DIR)/../  \
 
 CC = gcc
 AR = ar
