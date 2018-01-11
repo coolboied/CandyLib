@@ -46,4 +46,9 @@ clean:
 	rm $(OBJ) $(COBJ) $(TAR)
 
 cleanAll: $(CLIB)
-	rm $(OBJ) $(COBJ) $(TAR) $(LIB)
+	@for lib in $(LIB);	\
+		do \
+		cd $$(dirname $$lib) && make clean; \
+		done
+
+	rm $(OBJ) $(COBJ) $(TAR)
